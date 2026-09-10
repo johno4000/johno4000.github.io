@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今夜有妖-都市妖怪物语与民间奇谈阅读站</title>
+<meta name="description" content="今夜有妖是一个专注都市妖怪、民间奇谈与志怪故事的阅读站，提供妖怪图鉴、故事连载、奇谈专题与读者讨论，带你了解中国妖怪文化的来龙去脉。">
+<meta name="keywords" content="今夜有妖,妖怪故事,都市妖怪,民间奇谈,志怪故事,妖怪图鉴,中国妖怪文化">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --ink:#1a1520;
+    --ink-2:#241c2e;
+    --paper:#f5f0e8;
+    --paper-2:#ebe3d6;
+    --jade:#3f7d6e;
+    --jade-l:#5aa48f;
+    --cinnabar:#b8402f;
+    --gold:#c9a227;
+    --violet:#6b4a8c;
+    --line:rgba(26,21,32,.12);
+    --shadow:0 10px 30px rgba(26,21,32,.10);
+    --radius:14px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Songti SC","STSong","Noto Serif SC",Georgia,"Microsoft YaHei",serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(180deg,#1a1520 0%,#241c2e 100%);
+    color:var(--paper);
+    border-bottom:2px solid var(--gold);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:12px 20px;max-width:var(--maxw);margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:44px;height:44px;flex:none;border-radius:50%;
+    background:radial-gradient(circle at 34% 30%,var(--gold),var(--cinnabar) 62%,#5c1a12);
+    display:grid;place-items:center;
+    font-size:20px;font-weight:700;color:#fff8e6;
+    box-shadow:0 0 0 2px rgba(201,162,39,.35),0 6px 16px rgba(0,0,0,.4);
+  }
+  .brand-text strong{display:block;font-size:1.28rem;letter-spacing:.16em;font-weight:700;}
+  .brand-text span{display:block;font-size:.7rem;letter-spacing:.28em;color:var(--gold);opacity:.85;font-family:system-ui,sans-serif;}
+
+  .main-nav{display:flex;gap:6px;flex-wrap:wrap;}
+  .main-nav a{
+    padding:8px 14px;border-radius:999px;font-size:.94rem;
+    color:#e7dfd2;transition:.22s;border:1px solid transparent;
+  }
+  .main-nav a:hover,.main-nav a.active{
+    background:rgba(201,162,39,.14);
+    border-color:rgba(201,162,39,.45);
+    color:#fff;
+  }
+  .nav-toggle{
+    display:none;background:none;border:1px solid rgba(201,162,39,.5);
+    color:var(--gold);border-radius:8px;padding:6px 10px;font-size:1rem;cursor:pointer;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(900px 420px at 82% -10%,rgba(107,74,140,.55),transparent 70%),
+      radial-gradient(700px 380px at 8% 110%,rgba(63,125,110,.45),transparent 70%),
+      linear-gradient(160deg,#1a1520 0%,#2b2136 55%,#191420 100%);
+    color:var(--paper);
+    padding:64px 0 72px;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);
+    background-size:26px 26px;opacity:.5;
+  }
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.25fr .9fr;gap:44px;align-items:center;
+  }
+  .hero-tag{
+    display:inline-block;font-family:system-ui,sans-serif;
+    font-size:.74rem;letter-spacing:.24em;color:var(--gold);
+    border:1px solid rgba(201,162,39,.5);border-radius:999px;
+    padding:5px 14px;margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(2rem,4.4vw,3.2rem);
+    line-height:1.28;letter-spacing:.04em;margin-bottom:18px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(92deg,var(--gold),#f0d98a 60%,var(--cinnabar));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    font-size:1.04rem;color:#d7cec1;max-width:56ch;margin-bottom:26px;
+  }
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:12px 26px;border-radius:999px;
+    font-size:.96rem;letter-spacing:.06em;transition:.24s;cursor:pointer;
+    border:1px solid transparent;font-family:inherit;
+  }
+  .btn-primary{
+    background:linear-gradient(92deg,var(--cinnabar),#8f2c1e);
+    color:#fff6ea;box-shadow:0 8px 22px rgba(184,64,47,.35);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(184,64,47,.5);}
+  .btn-ghost{border-color:rgba(201,162,39,.55);color:var(--gold);}
+  .btn-ghost:hover{background:rgba(201,162,39,.14);color:#fff;}
+
+  .hero-stats{
+    display:flex;gap:28px;margin-top:34px;flex-wrap:wrap;
+    font-family:system-ui,sans-serif;
+  }
+  .hero-stats div strong{display:block;font-size:1.4rem;color:var(--gold);letter-spacing:.04em;}
+  .hero-stats div span{font-size:.76rem;color:#a99f92;letter-spacing:.14em;}
+
+  .hero-card{
+    background:rgba(245,240,232,.06);
+    border:1px solid rgba(201,162,39,.28);
+    border-radius:var(--radius);
+    padding:26px;
+    backdrop-filter:blur(4px);
+  }
+  .hero-card h2{
+    font-size:1.06rem;letter-spacing:.14em;color:var(--gold);
+    margin-bottom:16px;font-weight:600;
+  }
+  .hero-card li{
+    display:flex;gap:12px;align-items:flex-start;
+    padding:11px 0;border-bottom:1px dashed rgba(201,162,39,.2);
+    font-size:.93rem;color:#ded5c8;
+  }
+  .hero-card li:last-child{border-bottom:none;}
+  .hero-card .idx{
+    font-family:system-ui,sans-serif;font-size:.74rem;color:var(--gold);
+    border:1px solid rgba(201,162,39,.45);border-radius:6px;
+    padding:1px 7px;flex:none;margin-top:3px;
+  }
+
+  /* ---------- Section base ---------- */
+  section{padding:66px 0;}
+  .section-head{margin-bottom:34px;}
+  .section-head .kicker{
+    font-family:system-ui,sans-serif;font-size:.74rem;letter-spacing:.26em;
+    color:var(--jade);text-transform:uppercase;display:block;margin-bottom:10px;
+  }
+  .section-head h2{
+    font-size:clamp(1.4rem,2.6vw,1.9rem);letter-spacing:.06em;
+    position:relative;padding-left:16px;
+  }
+  .section-head h2::before{
+    content:"";position:absolute;left:0;top:.22em;bottom:.22em;width:5px;
+    border-radius:3px;background:linear-gradient(180deg,var(--cinnabar),var(--gold));
+  }
+  .section-head p{color:#5d5560;margin-top:12px;max-width:70ch;font-size:.96rem;}
+
+  /* ---------- 图鉴 grid ---------- */
+  .yokai-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:20px;
+  }
+  .yokai-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;transition:.26s;position:relative;overflow:hidden;
+  }
+  .yokai-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--violet),var(--jade),var(--gold));
+    transform:scaleX(0);transform-origin:left;transition:.3s;
+  }
+  .yokai-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(107,74,140,.3);}
+  .yokai-card:hover::before{transform:scaleX(1);}
+  .yokai-card .sigil{
+    width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+    font-size:1.1rem;margin-bottom:14px;color:#fff;
+    background:linear-gradient(135deg,var(--violet),var(--jade));
+  }
+  .yokai-card h3{font-size:1.08rem;letter-spacing:.08em;margin-bottom:8px;}
+  .yokai-card .origin{
+    font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.12em;
+    color:var(--cinnabar);margin-bottom:10px;
+  }
+  .yokai-card p{font-size:.9rem;color:#5d5560;line-height:1.7;}
+
+  /* ---------- 连载 ---------- */
+  .serial{background:var(--paper-2);}
+  .serial-layout{display:grid;grid-template-columns:1.6fr 1fr;gap:32px;}
+  .story-list{display:flex;flex-direction:column;gap:16px;}
+  .story-item{
+    display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 22px;transition:.24s;
+  }
+  .story-item:hover{border-color:var(--jade);box-shadow:var(--shadow);}
+  .story-ch{
+    font-family:system-ui,sans-serif;text-align:center;
+    background:linear-gradient(150deg,#241c2e,#3d2f4d);color:var(--gold);
+    border-radius:10px;padding:10px 4px;
+  }
+  .story-ch strong{display:block;font-size:1.15rem;}
+  .story-ch span{font-size:.66rem;letter-spacing:.1em;color:#b8ab9c;}
+  .story-body h3{font-size:1.06rem;letter-spacing:.05em;margin-bottom:6px;}
+  .story-body p{font-size:.88rem;color:#5d5560;}
+  .story-meta{
+    font-family:system-ui,sans-serif;font-size:.74rem;color:#8a8090;
+    text-align:right;white-space:nowrap;letter-spacing:.06em;
+  }
+  .story-meta .tag{
+    display:inline-block;margin-bottom:6px;padding:2px 9px;border-radius:999px;
+    background:rgba(63,125,110,.12);color:var(--jade);font-size:.7rem;
+  }
+
+  .side-panel{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;
+  }
+  .side-panel h3{
+    font-size:1.02rem;letter-spacing:.12em;margin-bottom:16px;
+    padding-bottom:12px;border-bottom:1px solid var(--line);
+  }
+  .rank-list li{
+    display:flex;gap:12px;align-items:baseline;padding:9px 0;font-size:.9rem;
+  }
+  .rank-list li .no{
+    font-family:system-ui,sans-serif;font-weight:700;font-size:.86rem;
+    color:#b8ab9c;width:22px;flex:none;
+  }
+  .rank-list li:nth-child(1) .no{color:var(--cinnabar);}
+  .rank-list li:nth-child(2) .no{color:var(--gold);}
+  .rank-list li:nth-child(3) .no{color:var(--jade);}
+  .rank-list li a{flex:1;}
+  .rank-list li a:hover{color:var(--cinnabar);}
+  .rank-list li .hot{font-family:system-ui,sans-serif;font-size:.72rem;color:#a49a92;}
+
+  /* ---------- 专题 ---------- */
+  .topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;}
+  .topic-card{
+    border-radius:var(--radius);padding:28px;color:#f3ece0;
+    background:linear-gradient(150deg,#2b2136,#1a1520);
+    border:1px solid rgba(201,162,39,.22);
+    display:flex;flex-direction:column;gap:12px;transition:.26s;
+  }
+  .topic-card:nth-child(2){background:linear-gradient(150deg,#1f3a34,#14211e);}
+  .topic-card:nth-child(3){background:linear-gradient(150deg,#3a1f1c,#20110f);}
+  .topic-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(26,21,32,.28);}
+  .topic-card .label{
+    font-family:system-ui,sans-serif;font-size:.7rem;letter-spacing:.24em;
+    color:var(--gold);
+  }
+  .topic-card h3{font-size:1.16rem;letter-spacing:.06em;}
+  .topic-card p{font-size:.9rem;color:#c8bfb3;flex:1;}
+  .topic-card .more{
+    font-family:system-ui,sans-serif;font-size:.8rem;letter-spacing:.1em;
+    color:var(--gold);border-top:1px solid rgba(201,162,39,.24);padding-top:12px;
+  }
+
+  /* ---------- 指南 ---------- */
+  .guide{background:var(--paper-2);}
+  .guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;}
+  .guide-card{
+    background:#fff;border-radius:var(--radius);padding:26px;
+    border:1px solid var(--line);border-left:4px solid var(--jade);
+  }
+  .guide-card:nth-child(2){border-left-color:var(--cinnabar);}
+  .guide-card:nth-child(3){border-left-color:var(--gold);}
+  .guide-card:nth-child(4){border-left-color:var(--violet);}
+  .guide-card h3{font-size:1.04rem;margin-bottom:10px;letter-spacing:.06em;}
+  .guide-card p{font-size:.9rem;color:#5d5560;}
+  .guide-card ul{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+  .guide-card li{
+    font-size:.88rem;color:#5d5560;padding-left:16px;position:relative;
+  }
+  .guide-card li::before{
+    content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;
+    border-radius:50%;background:var(--gold);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{display:flex;flex-direction:column;gap:12px;max-width:900px;}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:0 22px;transition:.24s;
+  }
+  details[open]{border-color:rgba(63,125,110,.4);box-shadow:var(--shadow);}
+  summary{
+    cursor:pointer;padding:18px 0;font-size:1rem;font-weight:600;
+    letter-spacing:.05em;list-style:none;display:flex;justify-content:space-between;
+    align-items:center;gap:16px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"＋";font-family:system-ui,sans-serif;color:var(--cinnabar);
+    font-size:1.1rem;transition:.24s;flex:none;
+  }
+  details[open] summary::after{content:"－";}
+  details p{padding:0 0 20px;font-size:.92rem;color:#5d5560;max-width:80ch;}
+
+  /* ---------- Footer ---------- */
+  .site-footer{
+    background:linear-gradient(180deg,#1a1520,#120e18);
+    color:#b3a99c;padding:52px 0 28px;border-top:2px solid var(--gold);
+  }
+  .footer-grid{
+    display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;
+    padding-bottom:32px;border-bottom:1px solid rgba(201,162,39,.18);
+  }
+  .footer-brand strong{
+    display:block;font-size:1.2rem;letter-spacing:.18em;color:var(--paper);
+    margin-bottom:12px;
+  }
+  .footer-brand p{font-size:.86rem;line-height:1.8;max-width:36ch;}
+  .footer-col h4{
+    font-size:.92rem;letter-spacing:.14em;color:var(--gold);margin-bottom:14px;font-weight:600;
+  }
+  .footer-col li{margin-bottom:9px;}
+  .footer-col a{font-size:.86rem;transition:.2s;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-bottom{
+    padding-top:22px;display:flex;justify-content:space-between;gap:16px;
+    flex-wrap:wrap;font-family:system-ui,sans-serif;font-size:.76rem;color:#7d7469;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;}
+    .serial-layout{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:760px){
+    .nav-toggle{display:block;}
+    .main-nav{
+      display:none;width:100%;flex-direction:column;gap:2px;
+      padding:10px 0 4px;
+    }
+    .main-nav.open{display:flex;}
+    .header-inner{flex-wrap:wrap;}
+    .main-nav a{padding:10px 12px;border-radius:8px;}
+    section{padding:48px 0;}
+    .hero{padding:46px 0 54px;}
+    .story-item{grid-template-columns:52px 1fr;gap:14px;}
+    .story-meta{grid-column:1 / -1;text-align:left;}
+    .footer-grid{grid-template-columns:1fr;gap:26px;}
+    .hero-stats{gap:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark">妖</div>
+      <div class="brand-text">
+        <strong>今夜有妖</strong>
+        <span>YOKAI TONIGHT</span>
+      </div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="展开导航">☰ 目录</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#yokai" class="active">妖怪图鉴</a>
+      <a href="#serial">故事连载</a>
+      <a href="#topics">奇谈专题</a>
+      <a href="#guide">入坑指南</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag">都市 · 志怪 · 民间奇谈</span>
+        <h1>今夜有妖：<em>当妖怪走进城市</em>，故事才刚刚开始</h1>
+        <p class="lead">
+          如果你在找一个集中阅读妖怪故事、了解中国妖怪谱系的地方，「今夜有妖」把散落在古籍、地方传说与都市传闻里的妖怪重新整理成可读的条目与连载。这里不猎奇、不吓人，只把每个妖怪的来历、习性和它背后的人情讲清楚。
+        </p>
+        <div class="hero-actions">
+          <a href="#yokai" class="btn btn-primary">翻看图鉴</a>
+          <a href="#serial" class="btn btn-ghost">读最新连载</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>图鉴</strong><span>按地域与出处分类</span></div>
+          <div><strong>连载</strong><span>都市妖怪短篇</span></div>
+          <div><strong>专题</strong><span>古籍与民俗梳理</span></div>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h2>今夜推荐 · 三条线索</h2>
+        <ul>
+          <li><span class="idx">01</span><span>想快速入门，先从「妖怪图鉴」看起，每则条目都标注了典籍或传说来源。</span></li>
+          <li><span class="idx">02</span><span>喜欢故事性强的，可以直接跳去「故事连载」，从都市背景的短篇读起。</span></li>
+          <li><span class="idx">03</span><span>对民俗考据感兴趣，看「奇谈专题」，那里整理了妖怪形象的流变过程。</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 妖怪图鉴 -->
+  <section id="yokai">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Bestiary</span>
+        <h2>妖怪图鉴 · 按出处与习性归档</h2>
+        <p>中国妖怪体系庞杂，同一名字在不同地区可能对应完全不同的形象。下面这些条目以常见说法为主，并注明大致出处，方便你继续查证，而不是把它当成唯一标准答案。</p>
+      </div>
+      <div class="yokai-grid">
+        <article class="yokai-card">
+          <div class="sigil">狐</div>
+          <h3>狐妖</h3>
+          <div class="origin">出处 · 志怪笔记与民间传说</div>
+          <p>出现频率最高的妖怪之一。早期形象偏神秘，后世逐渐被人格化，常与读书人、市井生活产生交集。不同文本里善恶不一，阅读时值得留意版本差异。</p>
+        </article>
+        <article class="yokai-card">
+          <div class="sigil">魅</div>
+          <h3>山魈</h3>
+          <div class="origin">出处 · 山地与林区传说</div>
+          <p>多见于南方山区传闻，形象介于野兽与精怪之间。传说中它熟悉山林路径，常被描述为对闯入者有敌意，也常被解释为对未知自然环境的一种想象投射。</p>
+        </article>
+        <article class="yokai-card">
+          <div class="sigil">水</div>
+          <h3>水鬼与河童类</h3>
+          <div class="origin">出处 · 江河湖泊民俗</div>
+          <p>沿水而居的地方几乎都有类似传说。它们往往承担着「提醒人远离危险水域」的功能，是民俗中把安全告诫故事化的一种方式。</p>
+        </article>
+        <article class="yokai-card">
+          <div class="sigil">器</div>
+          <h3>器物成精</h3>
+          <div class="origin">出处 · 民间杂谈</div>
+          <p>旧伞、铜镜、扫帚等长期使用的物件被赋予灵性。这类故事通常与「惜物」观念相关，也常见于讲人情冷暖的短篇之中。</p>
+        </article>
+        <article class="yokai-card">
+          <div class="sigil">夜</div>
+          <h3>夜行类精怪</h3>
+          <div class="origin">出处 · 各地夜谈</div>
+          <p>与夜晚、灯火、更鼓相关的妖怪，多出现在宵禁时代的传闻里。它们的存在往往解释了古人对夜间声响与光影的困惑。</p>
+        </article>
+        <article class="yokai-card">
+          <div class="sigil">疫</div>
+          <h3>疫病相关传说</h3>
+          <div class="origin">出处 · 民俗与地方志记述</div>
+          <p>这类形象承载的是古人对疾病的恐惧与应对方式。今天读来，更适合当作民俗材料理解，而不是当作真实解释。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 故事连载 -->
+  <section class="serial" id="serial">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Serial</span>
+        <h2>故事连载 · 妖怪住进了写字楼</h2>
+        <p>把妖怪放进现代都市，是「今夜有妖」最想做的事。下面这些连载以短篇为主，每篇独立成章，从任意一章开始读都不会脱节。</p>
+      </div>
+      <div class="serial-layout">
+        <div class="story-list">
+          <article class="story-item">
+            <div class="story-ch"><strong>07</strong><span>章</span></div>
+            <div class="story-body">
+              <h3>末班地铁的第十一节车厢</h3>
+              <p>加班到深夜的人发现，末班车总有一节车厢没人上车。直到某天，他坐了进去，并遇见一个正在补票的老先生。</p>
+            </div>
+            <div class="story-meta"><span class="tag">都市怪谈</span><br>短篇 · 约 12 分钟</div>
+          </article>
+          <article class="story-item">
+            <div class="story-ch"><strong>06</strong><span>章</span></div>
+            <div class="story-body">
+              <h3>楼下便利店的猫会说人话</h3>
+              <p>夜班店员注意到，那只常来蹭空调的三花猫，只在凌晨两点开口，而且只跟买关东煮的人说话。</p>
+            </div>
+            <div class="story-meta"><span class="tag">轻松向</span><br>短篇 · 约 9 分钟</div>
+          </article>
+          <article class="story-item">
+            <div class="story-ch"><strong>05</strong><span>章</span></div>
+            <div class="story-body">
+              <h3>租来的房子多了一扇门</h3>
+              <p>合租的年轻人发现户型图和实际结构对不上。多出来的那扇门后面，住着一位按旧历生活的邻居。</p>
+            </div>
+            <div class="story-meta"><span class="tag">悬疑</span><br>短篇 · 约 14 分钟</div>
+          </article>
+          <article class="story-item">
+            <div class="story-ch"><strong>04</strong><span>章</span></div>
+            <div class="story-body">
+              <h3>写字楼三十三层的雨</h3>
+              <p>只有三十三层在下雨。保安说这是老规矩，撑伞的人不能进电梯，只能走楼梯。</p>
+            </div>
+            <div class="story-meta"><span class="tag">都市怪谈</span><br>短篇 · 约 11 分钟</div>
+          </article>
+        </div>
+        <aside class="side-panel">
+          <h3>本周热读榜</h3>
+          <ul class="rank-list">
+            <li><span class="no">01</span><a href="#serial">末班地铁的第十一节车厢</a><span class="hot">热</span></li>
+            <li><span class="no">02</span><a href="#serial">楼下便利店的猫会说人话</a><span class="hot">热</span></li>
+            <li><span class="no">03</span><a href="#serial">租来的房子多了一扇门</a></li>
+            <li><span class="no">04</span><a href="#serial">写字楼三十三层的雨</a></li>
+            <li><span class="no">05</span><a href="#yokai">狐妖形象的三个版本</a></li>
+            <li><span class="no">06</span><a href="#topics">为什么古人怕夜路</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题 -->
+  <section id="topics">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Topics</span>
+        <h2>奇谈专题 · 妖怪是怎么被讲出来的</h2>
+        <p>妖怪不是凭空出现的。每一个形象背后，都有地理环境、生活方式和当时人们关心的问题。这三个专题从不同角度切入，帮你把零散的故事串成线索。</p>
+      </div>
+      <div class="topic-grid">
+        <article class="topic-card">
+          <span class="label">专题一</span>
+          <h3>从山林到城市：妖怪住址的迁移</h3>
+          <p>早期妖怪故事多发生在荒野、古庙与深山，随着城市化推进，它们的活动范围也搬进了楼道、地铁和便利店。这一变化本身就是观察社会心理的一扇窗。</p>
+          <span class="more">阅读专题 →</span>
+        </article>
+        <article class="topic-card">
+          <span class="label">专题二</span>
+          <h3>典籍里的妖怪与口传版本有何不同</h3>
+          <p>同一只妖怪，在文人笔记里往往更文雅，在乡野口传中则更粗粝。对比两种版本，能看出记录者与讲述者各自在意什么。</p>
+          <span class="more">阅读专题 →</span>
+        </article>
+        <article class="topic-card">
+          <span class="label">专题三</span>
+          <h3>妖怪故事里的规矩与禁忌</h3>
+          <p>不回头、不答应、不捡路边的钱——这些反复出现的禁忌，其实是传统社会对风险的经验总结，被包装成了更容易被记住的故事形式。</p>
+          <span class="more">阅读专题 →</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 入坑指南 -->
+  <section class="guide" id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Guide</span>
+        <h2>入坑指南 · 怎么读妖怪故事才不迷路</h2>
+        <p>妖怪题材门槛不高，但想要读得明白，有几个小方法可以少走弯路。以下建议适用于绝大多数志怪类文本。</p>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-card">
+          <h3>先看出处，再看故事</h3>
+          <p>同一名称的妖怪可能对应多个来源，先确认它出自哪类文本，能避免把不同版本混为一谈。</p>
+          <ul>
+            <li>文人笔记：叙述克制，重寓意</li>
+            <li>地方传说：细节丰富，版本多</li>
+            <li>现代创作：自由度高，需区分虚构</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>把妖怪当成人来读</h3>
+          <p>大多数妖怪故事真正讲的是人：欲望、恐惧、遗憾和规矩。抓住人物动机，故事就通了。</p>
+          <ul>
+            <li>它为什么出现</li>
+            <li>它想要什么</li>
+            <li>结局对谁有警示</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>注意时代背景</h3>
+          <p>宵禁、科举、宗族、水路运输……这些具体的生活条件，往往决定了妖怪以什么方式登场。</p>
+          <ul>
+            <li>夜间活动限制</li>
+            <li>出行与住宿方式</li>
+            <li>当时的医疗与认知水平</li>
+          </ul>
+        </article>
+        <article class="guide-card">
+          <h3>保持一点怀疑</h3>
+          <p>妖怪故事是文化材料，不是事实记录。享受它的想象力，同时分清哪些是文学加工。</p>
+          <ul>
+            <li>不把传说当史料</li>
+            <li>不轻信单一版本</li>
+            <li>遇到矛盾说法属正常</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>常见问题</h2>
+        <p>关于「今夜有妖」这个站点和妖怪题材本身，读者问得最多的几个问题。</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>「今夜有妖」主要提供什么内容？</summary>
+          <p>站点以妖怪题材为核心，包含三类内容：一是按出处整理的妖怪图鉴条目；二是以现代都市为背景的短篇故事连载；三是围绕民俗与典籍的专题梳理。所有内容都以可读、可查证为原则，不追求猎奇效果。</p>
+        </details>
+        <details>
+          <summary>这些妖怪故事是真实发生的吗？</summary>
+          <p>不是。妖怪故事属于民间传说与文学创作范畴，反映的是特定时代人们的想象、恐惧与价值判断。本站内容用于文化阅读与兴趣了解，不应被视为事实记录或现实解释。</p>
+        </details>
+        <details>
+          <summary>没有妖怪文化基础，能直接看连载吗？</summary>
+          <p>可以。连载以独立短篇为主，每篇自成一体，不依赖前置知识。如果读完后对某个妖怪形象产生兴趣，再回到图鉴或专题里深入了解即可。</p>
+        </details>
+        <details>
+          <summary>同一只妖怪为什么在不同文章里说法不一样？</summary>
+          <p>这是正常现象。妖怪形象在长期口传与书写中不断变化，地域、时代和记录者都会带来差异。本站会尽量标注来源，遇到多种说法时并列呈现，而不是强行统一。</p>
+        </details>
+        <details>
+          <summary>内容适合什么年龄段阅读？</summary>
+          <p>整体以温和叙述为主，不刻意制造恐怖氛围，适合对民俗与故事感兴趣的普通读者。个别篇章带有悬疑色彩，年龄较小的读者建议在家长陪同下阅读。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>今夜有妖</strong>
+        <p>一个安静的妖怪故事阅读站。整理图鉴、连载短篇、梳理民俗，把散落各处的奇谈重新讲给愿意听的人。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#yokai">妖怪图鉴</a></li>
+          <li><a href="#serial">故事连载</a></li>
+          <li><a href="#topics">奇谈专题</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>阅读帮助</h4>
+        <ul>
+          <li><a href="#guide">入坑指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#top">回到顶部</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#top">站点简介</a></li>
+          <li><a href="#topics">内容来源说明</a></li>
+          <li><a href="#faq">阅读提示</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>今夜有妖 · 妖怪题材阅读与民俗整理</span>
+      <span>本站内容属文学与民俗范畴，请理性阅读</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('mainNav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        nav.classList.toggle('open');
+      });
+      nav.addEventListener('click', function(e){
+        if(e.target.tagName === 'A' && window.innerWidth <= 760){
+          nav.classList.remove('open');
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+            </html>
